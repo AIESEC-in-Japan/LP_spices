@@ -122,7 +122,7 @@ h1 {
 
 header {
   background-size: cover;
-  padding: 200px calc(50% - 400px) 160px;
+  padding: 140px calc(50% - 400px) 100px;
   text-align: center;
   color: #fff;
   position: relative;
@@ -147,7 +147,7 @@ header {
             filter: drop-shadow(0 0 10px #000a); }
     @media screen and (min-width: 801px) {
       header #inner {
-        line-height: 96px; } }
+        line-height: 66px; } }
     @media screen and (max-width: 800px) {
       header #inner {
         line-height: 60px; } }
@@ -159,7 +159,9 @@ header {
       box-sizing: content-box; }
       @media screen and (min-width: 801px) {
         header #inner h2 {
-          font-size: 2.4em; } }
+          font-size: 2.4em; }
+          header #inner h2 div {
+            margin-bottom: 16px; } }
       @media screen and (max-width: 800px) {
         header #inner h2 {
           padding-left: 24px; } }
@@ -184,7 +186,14 @@ section {
         margin: 0 auto;
         width: 800px; }
         section .inner.about {
-          width: 600px; } }
+          display: grid;
+          grid-template-columns: 120px 1fr;
+          grid-gap: 20px; }
+          section .inner.about h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em; } }
     @media screen and (max-width: 800px) {
       section .inner {
         font-size: 0.9em; } }
@@ -220,7 +229,7 @@ section {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 16px; }
       section .charms .charm {
-        padding: 16px; }
+        padding: 0 16px; }
         section .charms .charm .imgbox {
           position: relative; }
           section .charms .charm .imgbox::before {
@@ -297,7 +306,7 @@ section {
     @media screen and (min-width: 801px) {
       section .carousels {
         max-width: 800px;
-        margin: 0 auto 24px;
+        margin: 0 auto 64px;
         height: 320px;
         width: calc(100% - 200px); } }
     @media screen and (max-width: 800px) {
@@ -355,26 +364,50 @@ section {
         height: 100%;
         box-sizing: border-box;
         position: absolute;
+        overflow: hidden;
         top: 0; }
         section .carousels .carousel .imgbox img {
           width: 100%;
           height: 100%;
           position: absolute;
           top: 0;
-          left: 0; }
+          left: 0;
+          -o-object-fit: cover;
+             object-fit: cover; }
         section .carousels .carousel .imgbox .cbox {
           position: absolute;
           bottom: 0;
-          left: 32px;
+          left: 0px;
+          padding: 16px 32px;
           color: #fff;
           text-align: left;
+          background: #0004;
           -webkit-filter: drop-shadow(0px 0px 5px #000a);
-                  filter: drop-shadow(0px 0px 5px #000a); }
+                  filter: drop-shadow(0px 0px 5px #000a);
+          font-size: 1.4em; }
+          section .carousels .carousel .imgbox .cbox h4 {
+            margin: 0;
+            margin-bottom: 8px;
+            font-size: 1.3rem; }
           section .carousels .carousel .imgbox .cbox h3 {
+            margin: 0;
             margin-bottom: 8px; }
           section .carousels .carousel .imgbox .cbox p {
-            margin-top: 8px;
-            margin-bottom: 8px; }
+            margin: 0;
+            margin-top: 8px; }
+        @media screen and (min-width: 801px) {
+          section .carousels .carousel .imgbox .symbol {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            right: 0;
+            top: 0; }
+            section .carousels .carousel .imgbox .symbol img {
+              width: 100%;
+              height: auto; } }
+        @media screen and (max-width: 800px) {
+          section .carousels .carousel .imgbox .symbol {
+            display: none; } }
       section .carousels .carousel .previous, section .carousels .carousel .next {
         position: absolute;
         z-index: 3;
@@ -474,7 +507,8 @@ section {
           margin: 0 8px; }
   section .stories {
     display: flex;
-    align-items: center; }
+    align-items: flex-start;
+    padding-bottom: 56px; }
     @media screen and (min-width: 801px) {
       section .stories {
         justify-content: space-between;
@@ -528,13 +562,64 @@ section {
           height: 100%;
           left: 0; }
       section .stories .item h3 {
-        margin-bottom: 8px; }
+        margin-bottom: 8px;
+        font-size: 1em;
+        word-break: break-all; }
       section .stories .item h4 {
         margin: 1rem 0 4px; }
       section .stories .item span {
         font-size: 0.8em; }
       section .stories .item p {
         margin: 0 0 1fr; }
+  section .flow .item {
+    padding: 32px 0; }
+    section .flow .item h3 {
+      background: #F05A3C;
+      color: #fff;
+      padding: 16px 0;
+      width: 240px;
+      margin: 0 auto; }
+    section .flow .item .thumbnail {
+      width: 120px;
+      position: relative;
+      margin: 24px auto; }
+      section .flow .item .thumbnail img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: contain;
+           object-fit: contain; }
+  @media screen and (max-width: 800px) {
+    section .flow {
+      padding: 32px; }
+      section .flow .item h3 {
+        padding: 16px 0;
+        background: #F05A3C;
+        color: #fff; } }
+  @media screen and (min-width: 801px) {
+    section .flow {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: flex-start;
+      width: 800px;
+      margin: 0 auto; }
+      section .flow .item {
+        width: 100%; }
+        section .flow .item:nth-of-type(-n+3) {
+          border-bottom: 1px solid #eee; }
+        section .flow .item:nth-of-type(3n+1) {
+          border-right: 1px solid #eee; }
+        section .flow .item:nth-of-type(3n) {
+          border-left: 1px solid #eee; }
+        section .flow .item .detail {
+          width: 240px;
+          margin: 0 auto; }
+          section .flow .item .detail h4 {
+            font-size: 1.2em;
+            margin: 12px; }
+          section .flow .item .detail p {
+            line-height: 1rem;
+            font-size: 0.8em;
+            text-align: left; } }
   section .story_pics {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -567,6 +652,41 @@ section {
     section .story_pics img:nth-child(4) {
       grid-column: 4/5;
       grid-row: 2/3; }
+  section.cond .inner summary {
+    color: #0000;
+    transition: all 0.4s;
+    position: relative;
+    outline: none; }
+    section.cond .inner summary h2 {
+      color: #000;
+      margin-top: 0; }
+    section.cond .inner summary::after {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      bottom: -32px;
+      left: calc(50% - 12px);
+      transform-origin: center;
+      transform: rotate(45deg);
+      border-right: 2px solid #000;
+      transition: all 0.4s;
+      display: block;
+      content: "";
+      border-bottom: 2px solid #000; }
+  section.cond .inner[open] summary::after {
+    opacity: 0; }
+  @media screen and (min-width: 801px) {
+    section .cond_items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 32px; }
+      section .cond_items p {
+        line-height: 1.4rem; } }
+  section .cond_items ul {
+    list-style: none;
+    padding: 0; }
+  section .cond_items .notice {
+    font-size: 0.8em; }
   section .story_container h2, section .story_container h3 {
     margin-top: 48px;
     margin-bottom: 24px; }
@@ -640,8 +760,9 @@ section {
         text-align: left;
         background: linear-gradient(to top, #000, #0000);
         box-sizing: border-box; }
-        section .program_container .item .detail h4 {
-          margin-bottom: 4px; }
+        section .program_container .item .detail h4, section .program_container .item .detail h3 {
+          margin: 4px 0;
+          font-size: 1rem; }
       section .program_container .item .about_prg {
         text-align: left;
         display: none; }
@@ -704,15 +825,19 @@ section {
       section .program_container #openflg3:checked ~ #pm_3m .about_prg {
         display: block;
         padding: 16px; }
+        section .program_container #openflg1:checked ~ #sk_6w .about_prg h4,
+        section .program_container #openflg2:checked ~ #sk_3m .about_prg h4,
+        section .program_container #openflg3:checked ~ #pm_3m .about_prg h4 {
+          margin: 12px 0; }
         section .program_container #openflg1:checked ~ #sk_6w .about_prg h3,
         section .program_container #openflg2:checked ~ #sk_3m .about_prg h3,
         section .program_container #openflg3:checked ~ #pm_3m .about_prg h3 {
-          margin-top: 24px;
+          margin-top: 32px;
           margin-bottom: 8px; }
         section .program_container #openflg1:checked ~ #sk_6w .about_prg p,
         section .program_container #openflg2:checked ~ #sk_3m .about_prg p,
         section .program_container #openflg3:checked ~ #pm_3m .about_prg p {
-          margin-top: 8px; }
+          margin: 8px 0; }
       section .program_container #openflg1:checked ~ #sk_6w label,
       section .program_container #openflg2:checked ~ #sk_3m label,
       section .program_container #openflg3:checked ~ #pm_3m label {
@@ -788,7 +913,7 @@ section {
           margin-bottom: 4px; }
       section .story_container .item .title {
         display: none;
-        font-size: 1.8em;
+        font-size: 1.7em;
         position: relative; }
         section .story_container .item .title::after {
           content: "";
@@ -798,35 +923,31 @@ section {
           width: 100%;
           height: 1px;
           background: linear-gradient(to right, #F05A3C, #0000); }
-      section .story_container .item .story_pics {
+      section .story_container .item .story_profile {
         display: none;
         grid-template-columns: 1fr 1fr;
-        margin: 0 auto; }
-        @media screen and (min-width: 801px) {
-          section .story_container .item .story_pics {
-            grid-template-rows: 200px 200px;
-            grid-gap: 24px;
-            width: 100%; } }
-        @media screen and (max-width: 800px) {
-          section .story_container .item .story_pics {
-            grid-template-rows: 120px 120px;
-            grid-gap: 0px;
-            width: 100%; } }
-        section .story_container .item .story_pics img {
+        margin: 0 auto;
+        width: 100%;
+        min-height: 300px; }
+        section .story_container .item .story_profile .profile {
+          padding: 40px 20px; }
+        section .story_container .item .story_profile img {
           display: block;
           width: 100%;
           height: 100%;
           -o-object-fit: cover;
              object-fit: cover; }
-        section .story_container .item .story_pics img:nth-child(1) {
-          grid-column: 1/2;
-          grid-row: 1/3; }
-        section .story_container .item .story_pics img:nth-child(2) {
-          grid-column: 2/3;
-          grid-row: 1/2; }
-        section .story_container .item .story_pics img:nth-child(3) {
-          grid-column: 2/3;
-          grid-row: 2/3; }
+        section .story_container .item .story_profile h4 {
+          font-size: 1em;
+          background-image: url("img/merker.png");
+          color: #F05A3C;
+          background-size: 1.425em 1em;
+          background-repeat: no-repeat;
+          background-position: center left;
+          padding-left: 1.5em;
+          display: inline-block; }
+        section .story_container .item .story_profile ul li {
+          text-align: left; }
       section .story_container .item .story_box {
         display: none; }
         section .story_container .item .story_box h3 {
@@ -874,6 +995,11 @@ section {
       section .story_container #openflg3:checked ~ .item:nth-of-type(3)::before,
       section .story_container #openflg4:checked ~ .item:nth-of-type(4)::before {
         position: absolute; }
+      section .story_container #openflg1:checked ~ .item:nth-of-type(1):not(.blank):hover,
+      section .story_container #openflg2:checked ~ .item:nth-of-type(2):not(.blank):hover,
+      section .story_container #openflg3:checked ~ .item:nth-of-type(3):not(.blank):hover,
+      section .story_container #openflg4:checked ~ .item:nth-of-type(4):not(.blank):hover {
+        box-shadow: none; }
       section .story_container #openflg1:checked ~ .item:nth-of-type(1) .story_icon,
       section .story_container #openflg2:checked ~ .item:nth-of-type(2) .story_icon,
       section .story_container #openflg3:checked ~ .item:nth-of-type(3) .story_icon,
@@ -891,10 +1017,10 @@ section {
       section .story_container #openflg3:checked ~ .item:nth-of-type(3) .title,
       section .story_container #openflg4:checked ~ .item:nth-of-type(4) .title {
         display: block; }
-      section .story_container #openflg1:checked ~ .item:nth-of-type(1) .story_pics,
-      section .story_container #openflg2:checked ~ .item:nth-of-type(2) .story_pics,
-      section .story_container #openflg3:checked ~ .item:nth-of-type(3) .story_pics,
-      section .story_container #openflg4:checked ~ .item:nth-of-type(4) .story_pics {
+      section .story_container #openflg1:checked ~ .item:nth-of-type(1) .story_profile,
+      section .story_container #openflg2:checked ~ .item:nth-of-type(2) .story_profile,
+      section .story_container #openflg3:checked ~ .item:nth-of-type(3) .story_profile,
+      section .story_container #openflg4:checked ~ .item:nth-of-type(4) .story_profile {
         display: grid; }
       section .story_container #openflg1:checked ~ .item:nth-of-type(1) .story_box,
       section .story_container #openflg2:checked ~ .item:nth-of-type(2) .story_box,
@@ -1039,7 +1165,7 @@ section {
     height: 200px; }
   section.contact,
   section .contact {
-    padding: 60px 0;
+    padding: 40px 0 54px;
     text-align: center; }
     section.contact h2,
     section .contact h2 {
@@ -1093,8 +1219,10 @@ section {
       font-size: 4em;
       display: block;
       margin: 24px auto; }
+  section.aiesec h2 {
+    margin-top: 0; }
   section.aiesec img {
-    height: 40px;
+    height: 36px;
     width: auto; }
   @media screen and (max-width: 800px) {
     section.aiesec {
