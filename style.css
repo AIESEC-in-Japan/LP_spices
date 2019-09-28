@@ -1,12 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP&display=swap");
-body {
-  margin: 0;
-  letter-spacing: 1.5px;
-  font-family: "Lato","Noto Sans JP"; }
-
-h1 {
-  font-size: 2rem; }
-
 #menu {
   width: 100%;
   height: 64px;
@@ -54,14 +46,14 @@ h1 {
     display: flex;
     align-items: center;
     z-index: 2;
-    transition: all 1s;
     width: 100%; }
     @media screen and (max-width: 800px) {
       #menu .menu_container {
         justify-content: center;
         position: absolute;
         top: 0;
-        left: 0; }
+        left: 0;
+        transition: all 1s; }
         #menu .menu_container a {
           color: #000; }
         #menu .menu_container a:last-child {
@@ -122,7 +114,11 @@ h1 {
 
 header {
   background-size: cover;
-  padding: 140px calc(50% - 400px) 100px;
+  padding: 0 calc(50% - 400px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
   text-align: center;
   color: #fff;
   position: relative;
@@ -170,6 +166,25 @@ header {
     header #inner::after {
       content: "";
       display: block; }
+
+footer {
+  background: #F05A3C;
+  color: #fff;
+  text-align: center;
+  padding: 16px 0; }
+  footer img {
+    height: 40px;
+    width: auto; }
+  footer p {
+    font-size: 0.5em; }
+
+body {
+  margin: 0;
+  letter-spacing: 1.5px;
+  font-family: "Lato","Noto Sans JP"; }
+
+h1 {
+  font-size: 2rem; }
 
 section {
   text-align: center;
@@ -455,16 +470,9 @@ section {
           left: 0px; }
         section .carousels .carousel .next {
           right: 0px; } }
-    section .carousels #carousel_r_1:checked ~ #carousel1,
-    section .carousels #carousel_r_2:checked ~ #carousel2,
-    section .carousels #carousel_r_3:checked ~ #carousel3 {
+    section .carousels input:checked + .carousel {
       opacity: 1;
       pointer-events: all; }
-    section .carousels #carousel_r_1:checked ~ .carousel_marker label:nth-child(1),
-    section .carousels #carousel_r_2:checked ~ .carousel_marker label:nth-child(2),
-    section .carousels #carousel_r_3:checked ~ .carousel_marker label:nth-child(3) {
-      background: #aaa;
-      box-shadow: none; }
   section .programs {
     display: grid;
     grid-gap: 24px; }
@@ -774,16 +782,16 @@ section {
           background-repeat: no-repeat;
           background-position: center left;
           padding-left: 1.5em; }
-      section .program_container .item label {
+      section .program_container .item a.label {
         width: 100%;
         height: 100%;
         position: absolute;
         top: 0;
         left: 0;
         transition: all 0.2s; }
-        section .program_container .item label:hover {
+        section .program_container .item a.label:hover {
           background: #fff5; }
-        section .program_container .item label::after {
+        section .program_container .item a.label::after {
           height: 16px;
           width: 16px;
           box-sizing: border-box;
@@ -796,60 +804,40 @@ section {
           right: 16px;
           transform: rotate(45deg);
           transform-origin: center; }
-    section .program_container #openflg1:checked ~ #sk_6w,
-    section .program_container #openflg2:checked ~ #sk_3m,
-    section .program_container #openflg3:checked ~ #pm_3m {
+    section .program_container input:checked + .item {
       -webkit-animation: focus 2s forwards;
               animation: focus 2s forwards;
       width: calc(100% - 12px); }
-      section .program_container #openflg1:checked ~ #sk_6w::before,
-      section .program_container #openflg2:checked ~ #sk_3m::before,
-      section .program_container #openflg3:checked ~ #pm_3m::before {
+      section .program_container input:checked + .item::before {
         position: absolute; }
-      section .program_container #openflg1:checked ~ #sk_6w img,
-      section .program_container #openflg2:checked ~ #sk_3m img,
-      section .program_container #openflg3:checked ~ #pm_3m img {
+      section .program_container input:checked + .item img {
         width: 100%;
         height: 320px;
         -o-object-fit: cover;
            object-fit: cover;
         position: relative; }
-      section .program_container #openflg1:checked ~ #sk_6w .detail,
-      section .program_container #openflg2:checked ~ #sk_3m .detail,
-      section .program_container #openflg3:checked ~ #pm_3m .detail {
+      section .program_container input:checked + .item .detail {
         position: relative;
         color: #000;
         background: transparent; }
-      section .program_container #openflg1:checked ~ #sk_6w .about_prg,
-      section .program_container #openflg2:checked ~ #sk_3m .about_prg,
-      section .program_container #openflg3:checked ~ #pm_3m .about_prg {
+      section .program_container input:checked + .item .about_prg {
         display: block;
         padding: 16px; }
-        section .program_container #openflg1:checked ~ #sk_6w .about_prg h4,
-        section .program_container #openflg2:checked ~ #sk_3m .about_prg h4,
-        section .program_container #openflg3:checked ~ #pm_3m .about_prg h4 {
+        section .program_container input:checked + .item .about_prg h4 {
           margin: 12px 0; }
-        section .program_container #openflg1:checked ~ #sk_6w .about_prg h3,
-        section .program_container #openflg2:checked ~ #sk_3m .about_prg h3,
-        section .program_container #openflg3:checked ~ #pm_3m .about_prg h3 {
+        section .program_container input:checked + .item .about_prg h3 {
           margin-top: 32px;
           margin-bottom: 8px; }
-        section .program_container #openflg1:checked ~ #sk_6w .about_prg p,
-        section .program_container #openflg2:checked ~ #sk_3m .about_prg p,
-        section .program_container #openflg3:checked ~ #pm_3m .about_prg p {
+        section .program_container input:checked + .item .about_prg p {
           margin: 8px 0; }
-      section .program_container #openflg1:checked ~ #sk_6w label,
-      section .program_container #openflg2:checked ~ #sk_3m label,
-      section .program_container #openflg3:checked ~ #pm_3m label {
+      section .program_container input:checked + .item a.label {
         width: 32px;
         height: 32px;
         bottom: 0;
         right: 0;
         top: auto;
         left: auto; }
-        section .program_container #openflg1:checked ~ #sk_6w label::after,
-        section .program_container #openflg2:checked ~ #sk_3m label::after,
-        section .program_container #openflg3:checked ~ #pm_3m label::after {
+        section .program_container input:checked + .item a.label::after {
           transform: rotate(-135deg);
           border-color: #000; }
   section .story_container {
@@ -962,7 +950,12 @@ section {
         section .story_container .item .story_box p {
           text-align: left;
           margin: 1.5rem 0; }
-      section .story_container .item label {
+        section .story_container .item .story_box img {
+          max-width: 100%;
+          max-height: 300px;
+          display: block;
+          margin: 64px auto; }
+      section .story_container .item a.label {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -970,7 +963,7 @@ section {
         left: 0;
         top: 0;
         transition: all 0.2s; }
-        section .story_container .item label::after {
+        section .story_container .item a.label::after {
           height: 16px;
           width: 16px;
           box-sizing: border-box;
@@ -983,75 +976,39 @@ section {
           left: calc(50% - 11.2px);
           transform-origin: center;
           transform: rotate(45deg); }
-    section .story_container #openflg1:checked ~ .item:nth-of-type(1),
-    section .story_container #openflg2:checked ~ .item:nth-of-type(2),
-    section .story_container #openflg3:checked ~ .item:nth-of-type(3),
-    section .story_container #openflg4:checked ~ .item:nth-of-type(4) {
+    section .story_container input:checked + .item {
       -webkit-animation: focus 2s forwards;
               animation: focus 2s forwards;
       padding-bottom: 40px; }
-      section .story_container #openflg1:checked ~ .item:nth-of-type(1)::before,
-      section .story_container #openflg2:checked ~ .item:nth-of-type(2)::before,
-      section .story_container #openflg3:checked ~ .item:nth-of-type(3)::before,
-      section .story_container #openflg4:checked ~ .item:nth-of-type(4)::before {
+      section .story_container input:checked + .item::before {
         position: absolute; }
-      section .story_container #openflg1:checked ~ .item:nth-of-type(1):not(.blank):hover,
-      section .story_container #openflg2:checked ~ .item:nth-of-type(2):not(.blank):hover,
-      section .story_container #openflg3:checked ~ .item:nth-of-type(3):not(.blank):hover,
-      section .story_container #openflg4:checked ~ .item:nth-of-type(4):not(.blank):hover {
+      section .story_container input:checked + .item:not(.blank):hover {
         box-shadow: none; }
-      section .story_container #openflg1:checked ~ .item:nth-of-type(1) .story_icon,
-      section .story_container #openflg2:checked ~ .item:nth-of-type(2) .story_icon,
-      section .story_container #openflg3:checked ~ .item:nth-of-type(3) .story_icon,
-      section .story_container #openflg4:checked ~ .item:nth-of-type(4) .story_icon {
+      section .story_container input:checked + .item .story_icon {
         display: none; }
-      section .story_container #openflg1:checked ~ .item:nth-of-type(1) .detail,
-      section .story_container #openflg2:checked ~ .item:nth-of-type(2) .detail,
-      section .story_container #openflg3:checked ~ .item:nth-of-type(3) .detail,
-      section .story_container #openflg4:checked ~ .item:nth-of-type(4) .detail {
+      section .story_container input:checked + .item .detail {
         position: relative;
         color: #000;
         background: transparent; }
-      section .story_container #openflg1:checked ~ .item:nth-of-type(1) .title,
-      section .story_container #openflg2:checked ~ .item:nth-of-type(2) .title,
-      section .story_container #openflg3:checked ~ .item:nth-of-type(3) .title,
-      section .story_container #openflg4:checked ~ .item:nth-of-type(4) .title {
+      section .story_container input:checked + .item .title {
         display: block; }
-      section .story_container #openflg1:checked ~ .item:nth-of-type(1) .story_profile,
-      section .story_container #openflg2:checked ~ .item:nth-of-type(2) .story_profile,
-      section .story_container #openflg3:checked ~ .item:nth-of-type(3) .story_profile,
-      section .story_container #openflg4:checked ~ .item:nth-of-type(4) .story_profile {
+      section .story_container input:checked + .item .story_profile {
         display: grid; }
-      section .story_container #openflg1:checked ~ .item:nth-of-type(1) .story_box,
-      section .story_container #openflg2:checked ~ .item:nth-of-type(2) .story_box,
-      section .story_container #openflg3:checked ~ .item:nth-of-type(3) .story_box,
-      section .story_container #openflg4:checked ~ .item:nth-of-type(4) .story_box {
+      section .story_container input:checked + .item .story_box {
         display: block;
         padding: 0 24px; }
       @media screen and (min-width: 801px) {
-        section .story_container #openflg1:checked ~ .item:nth-of-type(1),
-        section .story_container #openflg2:checked ~ .item:nth-of-type(2),
-        section .story_container #openflg3:checked ~ .item:nth-of-type(3),
-        section .story_container #openflg4:checked ~ .item:nth-of-type(4) {
+        section .story_container input:checked + .item {
           width: calc(100% - 112px); } }
       @media screen and (max-width: 800px) {
-        section .story_container #openflg1:checked ~ .item:nth-of-type(1),
-        section .story_container #openflg2:checked ~ .item:nth-of-type(2),
-        section .story_container #openflg3:checked ~ .item:nth-of-type(3),
-        section .story_container #openflg4:checked ~ .item:nth-of-type(4) {
+        section .story_container input:checked + .item {
           width: calc(100% - 12px); } }
-      section .story_container #openflg1:checked ~ .item:nth-of-type(1) label,
-      section .story_container #openflg2:checked ~ .item:nth-of-type(2) label,
-      section .story_container #openflg3:checked ~ .item:nth-of-type(3) label,
-      section .story_container #openflg4:checked ~ .item:nth-of-type(4) label {
+      section .story_container input:checked + .item a.label {
         top: auto;
         bottom: 0;
         width: 100%;
         height: 50px; }
-        section .story_container #openflg1:checked ~ .item:nth-of-type(1) label::after,
-        section .story_container #openflg2:checked ~ .item:nth-of-type(2) label::after,
-        section .story_container #openflg3:checked ~ .item:nth-of-type(3) label::after,
-        section .story_container #openflg4:checked ~ .item:nth-of-type(4) label::after {
+        section .story_container input:checked + .item a.label::after {
           transform: rotate(-135deg); }
   @media screen and (min-width: 801px) {
     section #contact_form {
@@ -1236,14 +1193,3 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px; }
-
-footer {
-  background: #F05A3C;
-  color: #fff;
-  text-align: center;
-  padding: 16px 0; }
-  footer img {
-    height: 40px;
-    width: auto; }
-  footer p {
-    font-size: 0.5em; }

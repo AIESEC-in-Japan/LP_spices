@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# website: http://ogp.me/ns/ website#">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>spicies | 未来を背負う貴方に、リアルで熱い経験を。</title>
-    <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<base href="/">
+<link rel="stylesheet" href="style.css">
+<meta property="og:site_name" content="SPICIES | 燻っている貴方に、ピリッとした経験を" />
+<meta property="og:url" content="" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SPICIES" />
+    <meta property="og:description" content="「スパイシーズ」は、慶應SFCを拠点に運営している、新興国ベンチャー企業での海外インターンシッププログラムです。2018年冬からスタートし、これまで合計4人の学生を送り出しました。" />
+    <title>SPICIES | 燻っている貴方に、ピリッとした経験を</title>
 </head>
 <body>
     <menu id="menu">
-        <input type="checkbox" id="trigger" />
-        <h1 id="logo"><img src="img/spicieslogowhite.png" alt="SPICY" class="white"><img src="img/spicieslogo.png" alt="SPICY" class="orange"></h1>
-        <label class="hamburger" for="trigger"></label>
-        <div class="menu_container">
-            <a href="index.html">ABOUT</a>
-            <a href="programs.html">PROGRAMS</a>
-            <a href="story.html">VOICE</a>
-            <a href="contact.html">CONTACT</a>
-        </div>
-    </menu>
+    <input type="checkbox" id="trigger" />
+    <h1 id="logo"><img src="img/spicieslogowhite.png" alt="SPICY" class="white"><img src="img/spicieslogo.png" alt="SPICY" class="orange"></h1>
+    <label class="hamburger" for="trigger"></label>
+    <div class="menu_container">
+        <a href="">ABOUT</a>
+        <a href="programs">PROGRAMS</a>
+        <a href="voice">VOICE</a>
+        <a href="contact.php">CONTACT</a>
+    </div>
+</menu>
+
     <header>
         <div id="inner">
             <h2>
@@ -27,7 +35,7 @@
                 </div>
                 <div>
                     未来を背負う貴方に、<br>
-                    リアルで熱い経験を。
+                    リアルな体験を。
                 </div>
                 <img src="img/spicieslogo.png" alt="SPICY">
             </h2>
@@ -82,64 +90,90 @@
         <section>
             <h2>PROGRAMS</h2>
             <div class="carousels">
-                <input type="radio" name="carousel" id="carousel_r_1" checked>
-                <input type="radio" name="carousel" id="carousel_r_2">
-                <input type="radio" name="carousel" id="carousel_r_3">
-                <div id="carousel1" class="carousel">
-                    <a class="imgbox" href="programs.html#sk_6w">
-                        <img src="img/bg1.webp" />
-                        <div class="cbox">
-                            <h4>“過去最高の売上を作れ！”</h4>
-                            <h3>STAR KITCHEN</h3>
-                            <p>6週間〜</p>
-                        </div>
-                        <div class="symbol">
-                            <img src="img/symbol/vietnum.webp" />
-                        </div>
-                    </a>
-                    <label class="previous" for="carousel_r_3"></label>
-                    <label class="next" for="carousel_r_2"></label>
-                </div>
-                <div id="carousel2" class="carousel">
-                    <a class="imgbox" href="programs.html#sk_3m">
-                        <img src="img/bg1.webp" />
-                        <div class="cbox">
-                            <h4>“一線を画する新土産を開発！”</h4>
-                            <h3>STAR KITCHEN</h3>
-                            <p>3ヶ月〜</p>
-                        </div>
-                        <div class="symbol">
-                            <img src="img/symbol/vietnum.webp" />
-                        </div>
-                    </a>
-                    <label class="previous" for="carousel_r_1"></label>
-                    <label class="next" for="carousel_r_3"></label>
-                </div>
-                <div id="carousel3" class="carousel">
-                    <a class="imgbox" href="programs.html#pm_3m">
-                        <img src="img/pocoloco.jpg" />
+                
+                
+                <input type="radio" name="carousel" id="carousel_pm_3m">
+                <div class="carousel">
+                    <a class="imgbox" href="programs/#pm_3m">
+                        <img src="img/programs/pm_3m.jpg" />
                         <div class="cbox">
                             <h4>“新しい観光マーケットを生み出せ！”</h4>
                             <h3>PICTURE MEDIA</h3>
                             <p>3ヶ月〜</p>
                         </div>
                         <div class="symbol">
-                            <img src="img/symbol/vietnum.webp" />
+                            <img src="img/symbol/vietnum.jpg" />
                         </div>
                     </a>
-                    <label class="previous" for="carousel_r_2"></label>
-                    <label class="next" for="carousel_r_1"></label>
+                    <a href="javascript:prev()" class="previous"></a>
+                    <a href="javascript:next()" class="next"></a>
                 </div>
+                
+                
+                
+                <input type="radio" name="carousel" id="carousel_sk_3m">
+                <div class="carousel">
+                    <a class="imgbox" href="programs/#sk_3m">
+                        <img src="img/programs/sk_3m.jpg" />
+                        <div class="cbox">
+                            <h4>“一線を画する新土産を開発！”</h4>
+                            <h3>STAR KITCHEN</h3>
+                            <p>3ヶ月〜</p>
+                        </div>
+                        <div class="symbol">
+                            <img src="img/symbol/vietnum.jpg" />
+                        </div>
+                    </a>
+                    <a href="javascript:prev()" class="previous"></a>
+                    <a href="javascript:next()" class="next"></a>
+                </div>
+                
+                
+                
+                <input type="radio" name="carousel" id="carousel_sk_6w">
+                <div class="carousel">
+                    <a class="imgbox" href="programs/#sk_6w">
+                        <img src="img/programs/sk_6w.jpg" />
+                        <div class="cbox">
+                            <h4>“過去最高の売上を作れ！”</h4>
+                            <h3>STAR KITCHEN</h3>
+                            <p>6週間〜</p>
+                        </div>
+                        <div class="symbol">
+                            <img src="img/symbol/vietnum.jpg" />
+                        </div>
+                    </a>
+                    <a href="javascript:prev()" class="previous"></a>
+                    <a href="javascript:next()" class="next"></a>
+                </div>
+                
+                
+                
+                
                 <div class="carousel_marker">
-                    <label for="carousel_r_1"></label>
-                    <label for="carousel_r_2"></label>
-                    <label for="carousel_r_3"></label>
+                    
+                    
+                    <label for="carousel_pm_3m"></label>
+                    
+                    
+                    
+                    <label for="carousel_sk_3m"></label>
+                    
+                    
+                    
+                    <label for="carousel_sk_6w"></label>
+                    
+                    
+                    
+                    
                 </div>
             </div>
         </section>
         <section>
             <h2>SPICY VOICE</h2>
             <div class="stories">
+                
+                
                 <a class="item" href="story.html#kevin">
                     <div class="story_icon">
                         <img src="img/kevin.jpg" />
@@ -150,26 +184,34 @@
                         <span>2018.12~2019.3</span>
                     </div>
                 </a>
-                <div class="item">
+                
+                
+                
+                <a class="item" href="story.html#kevin">
                     <div class="story_icon">
-                        <img src="img/comingsoon.png" />
+                        <img src="img/kevin.jpg" />
                     </div>
                     <div class="detail">
-                        <h3 align="center">No title</h3>
-                        <h4>Coming soon</h4>
-                        <span>No data</span>
+                        <h3>日本食クッキングレッスンの運営。今まで知らなかった生き方。</h3>
+                        <h4>KEVIN</h4>
+                        <span>2018.12~2019.3</span>
                     </div>
-                </div>
-                <div class="item">
+                </a>
+                
+                
+                
+                <a class="item" href="story.html#kevin">
                     <div class="story_icon">
-                        <img src="img/comingsoon.png" />
+                        <img src="img/kevin.jpg" />
                     </div>
                     <div class="detail">
-                        <h3 align="center">No title</h3>
-                        <h4>Coming soon</h4>
-                        <span>No data</span>
+                        <h3>日本食クッキングレッスンの運営。今まで知らなかった生き方。</h3>
+                        <h4>KEVIN</h4>
+                        <span>2018.12~2019.3</span>
                     </div>
-                </div>
+                </a>
+                
+                
             </div>
         </section>
         <section>
@@ -289,11 +331,32 @@
     </footer>
     <script>
         document.querySelector("#trigger").checked=false;
+        const all=document.querySelectorAll("[name='carousel']");
         setTimeout(()=>{
-            document.querySelectorAll("[name='carousel']").forEach((e,i)=>{
-                if(e.checked) document.querySelector("#carousel_r_"+((i+1)%3+1)).checked=true;
+            all.forEach((e,i,a)=>{
+                if(e.checked) a[(a.length+i+1)%a.length].checked=true;
             });
         },8000);
+        let i=0;
+        const style=document.createElement("style");
+        all.forEach((e,i)=>{
+            style.innerHTML+=`
+            .carousels>input:nth-of-type(${i+1}):checked~.carousel_marker>label:nth-of-type(${i+1}){
+                background:#aaa;
+                box-shadow:none;
+            }
+            `;
+        });
+        document.body.appendChild(style);
+        all[0].click();
+        function prev(){
+            i=(all.length+i-1)%all.length;
+            document.querySelectorAll("[name='carousel']")[i].click();
+        }
+        function next(){
+            i=(all.length+i+1)%all.length;
+            document.querySelectorAll("[name='carousel']")[i].click();
+        }
     </script>
 </body>
 </html>
